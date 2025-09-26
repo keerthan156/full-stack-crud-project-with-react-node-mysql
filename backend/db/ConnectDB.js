@@ -10,7 +10,8 @@ const ConnectDB = async () => {
     database: process.env.DB_DATABASE,
     waitForConnections: process.env.DB_WAITFORCONNECTIONS,
     connectionLimit: process.env.DB_CONNECTIONLIMIT,
-    queueLimit: process.env.DB_QUEUELIMIT
+    queueLimit: process.env.DB_QUEUELIMIT,
+    ssl: { rejectUnauthorized: false } // Added SSL configuration
   });
 
   // async await query which creates the database if it doesn't exist
